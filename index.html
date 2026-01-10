@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusantara Vanilla Export - Premium Indonesian Vanilla Beans</title>
+    <meta name="description" content="Professional Indonesian vanilla export company supplying premium vanilla beans to international buyers, importers, and manufacturers worldwide.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'vanilla-primary': '#4E342E',
+                        'vanilla-secondary': '#8D6E63',
+                        'vanilla-accent': '#C9A24D',
+                        'vanilla-bg': '#FAF7F2',
+                        'vanilla-text': '#2B2B2B'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(78, 52, 46, 0.8), rgba(141, 110, 99, 0.6)), 
+                        url('resources/hero-vanilla-beans.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #C9A24D, #8D6E63);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: #C9A24D;
+            color: #2B2B2B;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #B8923F;
+            box-shadow: 0 4px 12px rgba(201, 162, 77, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #8D6E63;
+            color: #4E342E;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #4E342E;
+            color: #FAF7F2;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease;
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(10px);
+            background: rgba(250, 247, 242, 0.95);
+        }
+    </style>
+</head>
+<body class="font-body bg-vanilla-bg text-vanilla-text">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-vanilla-secondary/20">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-vanilla-accent rounded-lg flex items-center justify-center">
+                        <span class="text-vanilla-text font-display font-bold text-lg">NVE</span>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-xl text-vanilla-primary">Nusantara Vanilla Export</h1>
+                        <p class="text-sm text-vanilla-secondary">Indonesian Vanilla Exporter</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-vanilla-primary font-medium border-b-2 border-vanilla-accent">Home</a>
+                    <a href="products.html" class="text-vanilla-secondary hover:text-vanilla-primary transition-colors">Products</a>
+                    <a href="why-choose-us.html" class="text-vanilla-secondary hover:text-vanilla-primary transition-colors">Why Choose Us</a>
+                    <a href="about.html" class="text-vanilla-secondary hover:text-vanilla-primary transition-colors">About</a>
+                    <a href="export-logistics.html" class="text-vanilla-secondary hover:text-vanilla-primary transition-colors">Export & Logistics</a>
+                    <a href="contact.html" class="text-vanilla-secondary hover:text-vanilla-primary transition-colors">Contact</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="contact.html" class="btn-primary px-6 py-2 rounded-lg font-medium">Request Quote</a>
+                    <button class="md:hidden text-vanilla-primary" id="mobile-menu-btn">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-vanilla-bg border-t border-vanilla-secondary/20" id="mobile-menu">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html" class="block text-vanilla-primary font-medium">Home</a>
+                <a href="products.html" class="block text-vanilla-secondary">Products</a>
+                <a href="why-choose-us.html" class="block text-vanilla-secondary">Why Choose Us</a>
+                <a href="about.html" class="block text-vanilla-secondary">About</a>
+                <a href="export-logistics.html" class="block text-vanilla-secondary">Export & Logistics</a>
+                <a href="contact.html" class="block text-vanilla-secondary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center text-white relative">
+        <div class="max-w-4xl mx-auto px-6 pt-20">
+            <h1 class="font-display text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                <span id="typed-headline"></span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 text-vanilla-bg/90">Supplied by Nusantara Vanilla Export</p>
+            <p class="text-lg mb-12 max-w-2xl mx-auto text-vanilla-bg/80">
+                Professional Indonesian vanilla export company serving international buyers, importers, and manufacturers with premium quality vanilla beans.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg inline-block">
+                    Request Quotation
+                </a>
+                <a href="contact.html" class="btn-secondary px-8 py-4 rounded-lg font-semibold text-lg inline-block border-white text-white hover:bg-white hover:text-vanilla-primary">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="py-20 reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-vanilla-primary mb-6">
+                        Professional Indonesian Vanilla Export
+                    </h2>
+                    <p class="text-lg mb-6 text-vanilla-text/80">
+                        Nusantara Vanilla Export specializes in supplying premium Indonesian vanilla beans to international markets. 
+                        We work directly with farmers across Indonesia's prime vanilla-growing regions to ensure consistent quality 
+                        and reliable supply for our global business partners.
+                    </p>
+                    <p class="text-lg mb-8 text-vanilla-text/80">
+                        Our export operations are based in Kabupaten Tangerang, Indonesia, strategically positioned to serve 
+                        international buyers with efficient logistics and comprehensive documentation support.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-vanilla-accent rounded-full"></div>
+                            <span class="text-vanilla-secondary">Export-Ready Documentation</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-vanilla-accent rounded-full"></div>
+                            <span class="text-vanilla-secondary">Quality Assurance</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-3 h-3 bg-vanilla-accent rounded-full"></div>
+                            <span class="text-vanilla-secondary">Global Shipping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="resources/vanilla-plantation.jpg" alt="Indonesian Vanilla Plantation" 
+                         class="w-full rounded-2xl shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-vanilla-primary/20 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Preview -->
+    <section class="py-20 bg-white reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-vanilla-primary mb-4">Premium Vanilla Products</h2>
+                <p class="text-xl text-vanilla-text/70 max-w-3xl mx-auto">
+                    We supply high-quality Indonesian vanilla beans with specifications that meet international standards 
+                    for moisture content, vanillin levels, and processing requirements.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Grade A Product -->
+                <div class="card-hover bg-vanilla-bg rounded-2xl p-8 border border-vanilla-secondary/20">
+                    <div class="mb-6">
+                        <img src="resources/product-samples/grade-a-beans.jpg" alt="Grade A Vanilla Beans" 
+                             class="w-full h-48 object-cover rounded-xl">
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-vanilla-primary mb-4">Grade A Vanilla Beans</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Moisture Content:</span>
+                            <span class="font-medium">25% - 35%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Vanillin Content:</span>
+                            <span class="font-medium">1.8% - 2.5%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Length:</span>
+                            <span class="font-medium">15 cm and above</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Origin:</span>
+                            <span class="font-medium">Indonesia</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn-primary w-full py-3 rounded-lg font-medium text-center block">
+                        View Specifications
+                    </a>
+                </div>
+                
+                <!-- Grade B Product -->
+                <div class="card-hover bg-vanilla-bg rounded-2xl p-8 border border-vanilla-secondary/20">
+                    <div class="mb-6">
+                        <img src="resources/product-samples/grade-b-beans.jpg" alt="Grade B Vanilla Beans" 
+                             class="w-full h-48 object-cover rounded-xl">
+                    </div>
+                    <h3 class="font-display text-2xl font-semibold text-vanilla-primary mb-4">Grade B Vanilla Beans</h3>
+                    <div class="space-y-3 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Moisture Content:</span>
+                            <span class="font-medium">15% - 25%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Vanillin Content:</span>
+                            <span class="font-medium">1.2% - 1.8%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Length:</span>
+                            <span class="font-medium">10 cm - 15 cm</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-vanilla-secondary">Origin:</span>
+                            <span class="font-medium">Indonesia</span>
+                        </div>
+                    </div>
+                    <a href="products.html" class="btn-primary w-full py-3 rounded-lg font-medium text-center block">
+                        View Specifications
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Assurance -->
+    <section class="py-20 reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <img src="resources/processing-facility.jpg" alt="Quality Processing Facility" 
+                         class="w-full rounded-2xl shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-vanilla-primary/20 to-transparent rounded-2xl"></div>
+                </div>
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-vanilla-primary mb-6">
+                        Quality-Oriented Processing
+                    </h2>
+                    <p class="text-lg mb-6 text-vanilla-text/80">
+                        Our vanilla beans undergo meticulous processing from farm to export. We maintain strict quality 
+                        control throughout the curing, drying, and packaging phases to ensure consistent specifications 
+                        that meet international standards.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-vanilla-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-vanilla-text font-bold text-sm">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-vanilla-primary mb-2">Careful Sourcing</h4>
+                                <p class="text-vanilla-text/70">Direct partnerships with Indonesian vanilla farmers across prime growing regions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-vanilla-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-vanilla-text font-bold text-sm">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-vanilla-primary mb-2">Traditional Curing</h4>
+                                <p class="text-vanilla-text/70">Multi-month sun-drying and conditioning process for optimal flavor development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-vanilla-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-vanilla-text font-bold text-sm">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-vanilla-primary mb-2">Quality Testing</h4>
+                                <p class="text-vanilla-text/70">Comprehensive analysis of moisture, vanillin content, and physical specifications.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-vanilla-accent rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                                <span class="text-vanilla-text font-bold text-sm">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-vanilla-primary mb-2">Export Packaging</h4>
+                                <p class="text-vanilla-text/70">Vacuum-sealed packaging in export-grade cartons for international shipping.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <a href="why-choose-us.html" class="btn-primary px-6 py-3 rounded-lg font-medium">
+                            Learn More About Our Process
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Export Readiness -->
+    <section class="py-20 bg-white reveal">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-vanilla-primary mb-4">Export-Ready Documentation</h2>
+                <p class="text-xl text-vanilla-text/70 max-w-3xl mx-auto">
+                    We provide comprehensive export documentation and logistics support to ensure smooth international 
+                    transactions and customs clearance for our global business partners.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-vanilla-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-vanilla-primary mb-4">Complete Documentation</h3>
+                    <p class="text-vanilla-text/70">Phytosanitary certificates, certificates of origin, and all required export paperwork.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-vanilla-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3a2 2 0 012-2h4a2 2 0 012 2v4m-6 0h6m-6 0l-2 2m8-2l2 2m-2-2v10a2 2 0 01-2 2H8a2 2 0 01-2-2V9a2 2 0 012-2h4a2 2 0 012 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-vanilla-primary mb-4">Flexible Shipping</h3>
+                    <p class="text-vanilla-text/70">FOB and CIF Incoterms with both air and sea freight options to meet your logistics needs.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-vanilla-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-xl font-semibold text-vanilla-primary mb-4">Reliable Lead Times</h3>
+                    <p class="text-vanilla-text/70">Standard processing and shipping schedules with clear communication throughout the export process.</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="export-logistics.html" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg">
+                    View Export Details
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-vanilla-primary text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-vanilla-accent rounded-lg flex items-center justify-center">
+                            <span class="text-vanilla-text font-display font-bold text-lg">NVE</span>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-xl">Nusantara Vanilla Export</h3>
+                            <p class="text-vanilla-bg/70 text-sm">Indonesian Vanilla Exporter</p>
+                        </div>
+                    </div>
+                    <p class="text-vanilla-bg/80 mb-4">
+                        Professional Indonesian vanilla export company based in Kabupaten Tangerang, 
+                        serving international buyers with premium quality vanilla beans.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="products.html" class="text-vanilla-bg/80 hover:text-vanilla-accent transition-colors">Products</a></li>
+                        <li><a href="why-choose-us.html" class="text-vanilla-bg/80 hover:text-vanilla-accent transition-colors">Why Choose Us</a></li>
+                        <li><a href="about.html" class="text-vanilla-bg/80 hover:text-vanilla-accent transition-colors">About</a></li>
+                        <li><a href="export-logistics.html" class="text-vanilla-bg/80 hover:text-vanilla-accent transition-colors">Export & Logistics</a></li>
+                        <li><a href="contact.html" class="text-vanilla-bg/80 hover:text-vanilla-accent transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-display font-semibold text-lg mb-4">Contact Information</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span class="text-vanilla-bg/80">Kabupaten Tangerang, Indonesia</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span class="text-vanilla-bg/80">export@nusantaravanillaexport.site</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-vanilla-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <span class="text-vanilla-bg/80">+62 851 8522 0549</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-vanilla-bg/20 mt-8 pt-8 text-center">
+                <p class="text-vanilla-bg/60">
+                    © 2025 Nusantara Vanilla Export. Professional Indonesian Vanilla Export Company.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
