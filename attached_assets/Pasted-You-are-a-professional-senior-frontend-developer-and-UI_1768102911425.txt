@@ -1,0 +1,120 @@
+You are a professional senior frontend developer and UI/UX specialist.
+
+🎯 Objective
+
+Improve the existing website with the following instructions without redesigning the layout or changing existing content, except where explicitly stated.
+
+1️⃣ Remove Text “NVE” (Global)
+
+Completely remove the following element from ALL pages, including footer:
+
+<span class="text-vanilla-text font-display font-bold text-lg">NVE</span>
+
+
+Rules:
+
+Remove the element entirely (not hidden).
+
+Do not replace it with any text or symbol.
+
+Do not affect layout, spacing, or alignment.
+
+Apply to:
+
+Header
+
+Footer
+
+Home page
+
+All internal pages
+
+Desktop & mobile views
+
+2️⃣ Remove “Request Quote” Button (Global Navbar)
+
+Remove the “Request Quote” button from:
+
+All navbar instances (desktop & mobile)
+
+All pages
+
+Ensure navbar remains balanced and visually clean after removal.
+
+Do not add any replacement button.
+
+3️⃣ Add Social Media Icons
+
+Add clean, minimal social media icons (SVG or font icons) with links opening in a new tab.
+
+Platforms & links:
+
+Instagram
+https://www.instagram.com/nusantaravanillaexport?igsh=MThqb21zcTJveWF5eQ==
+
+Facebook
+https://www.facebook.com/share/16ySV1pxCJ/
+
+LinkedIn
+https://www.linkedin.com/in/nusantara-vanilla-export-a215743a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app
+
+Placement:
+
+Footer (mandatory)
+
+Optional: header or contact section if space already exists
+
+Design rules:
+
+Minimal, professional, B2B export-grade
+
+Consistent spacing and alignment
+
+No new text sections
+
+4️⃣ Floating WhatsApp Button
+
+Add a floating WhatsApp button visible on all pages.
+
+Position: bottom-right corner
+
+Behavior:
+
+Always visible while scrolling
+
+Works on mobile & desktop
+
+Design:
+
+WhatsApp green
+
+Circular shape
+
+Subtle shadow
+
+Smooth hover / tap animation
+
+Use the existing WhatsApp number already configured in the project (do not invent a new one).
+
+5️⃣ Strict Rules
+
+❌ Do NOT redesign the website
+❌ Do NOT change existing content text
+❌ Do NOT add new sections
+❌ Do NOT mention or reintroduce “NVE”
+❌ Do NOT add “Request Quote” again
+
+✅ Only apply the changes listed above
+✅ Preserve original layout & styling
+
+✅ Final Checklist
+
+No “NVE” text anywhere
+
+No “Request Quote” button in any navbar
+
+Social media icons work correctly
+
+Floating WhatsApp button visible on all pages
+
+Layout remains unchanged
