@@ -1,5 +1,15 @@
 // Nusantara Vanilla Export - Main JavaScript File
 
+// Initialize EmailJS
+(function() {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js';
+    script.onload = function() {
+        emailjs.init("VvPp2TK7CIDLm5QCt");
+    };
+    document.head.appendChild(script);
+})();
+
 // Global Variables
 let currentStep = 1;
 let filteredProducts = [];
@@ -411,6 +421,18 @@ function initializeForms() {
 function handleFormSubmission(form) {
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
+    
+    // Send via EmailJS
+    if (typeof emailjs !== 'undefined') {
+        emailjs.send("service_ufj5l5p", "template_9vkv97e", data)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+            }, function(error) {
+                console.log('FAILED...', error);
+            });
+    } else {
+        console.warn('EmailJS not initialized');
+    }
     
     // Show success message
     showNotification('Inquiry submitted successfully! We will contact you within 24 hours.', 'success');
